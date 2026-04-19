@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import Reveal from "@/components/Reveal";
 
 export default function Home() {
@@ -17,7 +18,8 @@ export default function Home() {
     "idle"
   );
   const [formMessage, setFormMessage] = useState("");
-const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
   const whatsappNumber = "5511999999999";
   const appsScriptUrl =
     "https://script.google.com/macros/s/AKfycbwuwbtCIHtyrMjMkGxh9lwssRcCfvrk3wiEO08GfjZuBAtOXrVg-5emXUBHTM1JaHKtgQ/exec";
@@ -33,8 +35,10 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
     const numbers = value.replace(/\D/g, "").slice(0, 11);
 
     if (numbers.length <= 2) return numbers;
-    if (numbers.length <= 7)
+    if (numbers.length <= 7) {
       return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+    }
+
     return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(
       7
     )}`;
@@ -46,9 +50,7 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
   };
 
   const handleLeadInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
 
@@ -58,7 +60,7 @@ const [openFaq, setOpenFaq] = useState<number | null>(0);
     }));
   };
 
-  const handleLeadSubmit = async (e: React.FormEvent) => {
+  const handleLeadSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setFormStatus("idle");
@@ -151,68 +153,74 @@ Objetivo: ${leadForm.goal || "-"}`;
       name: "Starter",
       price: "R$ 97,00",
       description:
-        "Ideal para começar a automatizar o atendimento e responder clientes com mais rapidez.",
+        "Ideal para começar com site profissional e automação básica de atendimento.",
       featured: false,
       whatsappMessage:
-        "Olá! Tenho interesse no plano Starter da Zayntor. Quero entender como ele pode me ajudar a automatizar meu atendimento.",
+        "Olá! Tenho interesse no plano Starter da Zayntor. Quero entender como ele pode me ajudar a criar meu site e automatizar meu atendimento.",
     },
     {
       name: "Pro",
       price: "R$ 197,00",
       description:
-        "Mais automação, mais controle e mais capacidade para transformar atendimento em vendas.",
+        "Mais automação, mais controle e uma estrutura mais forte para site, atendimento e vendas.",
       featured: true,
       whatsappMessage:
-        "Olá! Tenho interesse no plano Pro da Zayntor. Quero entender como ele pode aumentar minhas vendas e organizar melhor meu atendimento.",
+        "Olá! Tenho interesse no plano Pro da Zayntor. Quero entender como ele pode unir site profissional e automação para vender mais.",
     },
     {
       name: "Business",
       price: "R$ 397,00",
       description:
-        "Estrutura mais completa para operações que querem crescer com mais escala, eficiência e controle.",
+        "Estrutura completa para empresas que querem site profissional, atendimento inteligente e escala.",
       featured: false,
       whatsappMessage:
-        "Olá! Tenho interesse no plano Business da Zayntor. Quero entender a melhor estrutura para escalar meu negócio.",
+        "Olá! Tenho interesse no plano Business da Zayntor. Quero entender a melhor estrutura para site, atendimento e crescimento do meu negócio.",
     },
   ];
 
   const steps = [
     {
       number: "01",
-      title: "Conectamos seus canais",
+      title: "Criamos seu site profissional",
       description:
-        "Integramos WhatsApp, site e atendimento digital para centralizar sua operação.",
+        "Desenhamos um site moderno, rápido e com cara de empresa séria para apresentar seu negócio e converter visitantes.",
     },
     {
       number: "02",
-      title: "Treinamos a inteligência",
+      title: "Integramos sua IA de atendimento",
       description:
-        "A IA aprende seu contexto, suas respostas e seu fluxo comercial para atender com precisão.",
+        "Conectamos um assistente inteligente ao site e ao WhatsApp para responder clientes em tempo real.",
     },
     {
       number: "03",
       title: "Automatizamos a conversão",
       description:
-        "O sistema responde, qualifica leads e conduz clientes para o próximo passo do funil.",
+        "A estrutura capta, organiza e encaminha leads para o próximo passo comercial com mais eficiência.",
     },
   ];
 
   const benefits = [
-    "Atendimento mais rápido e consistente",
-    "Menos perda de leads por demora na resposta",
-    "Mais organização comercial",
-    "Presença digital mais profissional",
+    "Site profissional com presença digital forte",
+    "Atendimento automatizado no site e no WhatsApp",
+    "Mais organização comercial para sua operação",
+    "Mais oportunidades convertidas em clientes",
   ];
 
   const faqs = [
     {
       question: "A Zayntor funciona apenas para clínicas?",
       answer:
-        "Não. A plataforma pode ser adaptada para qualquer empresa que precise automatizar atendimento e vendas.",
+        "Não. A Zayntor pode atender diversos nichos e criar a estrutura ideal de site e automação para cada negócio.",
     },
     {
-      question: "Preciso ter site?",
-      answer: "Não. Você pode começar só com automação e evoluir depois.",
+      question: "Vocês criam o site também?",
+      answer:
+        "Sim. A Zayntor cria seu site profissional do zero e integra atendimento inteligente para sua empresa operar melhor.",
+    },
+    {
+      question: "Preciso já ter um site pronto?",
+      answer:
+        "Não. Se você ainda não tem site, nós criamos para você e já deixamos preparado para captar e atender clientes.",
     },
     {
       question: "Funciona no WhatsApp?",
@@ -222,30 +230,30 @@ Objetivo: ${leadForm.goal || "-"}`;
   ];
 
   const trustItems = [
-    "Atendimento mais rápido",
-    "Qualificação de leads",
-    "Operação mais organizada",
-    "Pronto para WhatsApp",
+    "Criação de sites profissionais",
+    "IA de atendimento",
+    "Integração com WhatsApp",
+    "Automação comercial",
   ];
 
   const stats = [
-    { value: "< 1 min", label: "tempo de resposta automatizado" },
-    { value: "24/7", label: "disponibilidade de atendimento" },
-    { value: "+ organização", label: "para operação e comercial" },
+    { value: "Site + IA", label: "estrutura completa para vender mais" },
+    { value: "24/7", label: "atendimento ativo no site e no WhatsApp" },
+    { value: "+ conversão", label: "mais oportunidades aproveitadas" },
   ];
 
   const proofCards = [
     {
-      title: "Mais velocidade no atendimento",
-      text: "Respostas rápidas e consistentes reduzem demora, melhoram a experiência do cliente e evitam perda de oportunidade.",
+      title: "Site que transmite confiança",
+      text: "Sua empresa passa mais profissionalismo com um site moderno, rápido e pensado para converter visitantes em oportunidades.",
     },
     {
-      title: "Leads mais bem aproveitados",
-      text: "A estrutura ajuda a qualificar contatos, organizar informações e encaminhar cada lead para o próximo passo.",
+      title: "Atendimento que não para",
+      text: "A IA responde com rapidez, melhora a experiência do cliente e evita perda de contatos por demora no atendimento.",
     },
     {
-      title: "Operação mais profissional",
-      text: "Sua empresa transmite mais confiança com presença digital, resposta padronizada e processo mais claro.",
+      title: "Mais conversão com menos esforço",
+      text: "Você ganha uma estrutura mais organizada para captar, qualificar e encaminhar leads com mais eficiência.",
     },
   ];
 
@@ -285,7 +293,7 @@ Objetivo: ${leadForm.goal || "-"}`;
                 Zayntor AI
               </p>
               <p className="mt-1 text-[10px] uppercase tracking-[0.24em] text-white/45">
-                Inteligência para negócios
+                Sites e inteligência para negócios
               </p>
             </div>
           </div>
@@ -308,7 +316,7 @@ Objetivo: ${leadForm.goal || "-"}`;
           <button
             onClick={() =>
               openWhatsApp(
-                "Olá! Quero entender como a Zayntor pode automatizar meu atendimento e ajudar meu negócio a vender mais."
+                "Olá! Quero entender como a Zayntor pode criar meu site profissional e automatizar meu atendimento."
               )
             }
             className="rounded-xl bg-gradient-to-r from-cyan-400 to-purple-500 px-5 py-2 text-sm font-medium text-black shadow-[0_12px_30px_rgba(34,211,238,0.22)] transition duration-300 hover:scale-[1.02] hover:opacity-95"
@@ -324,7 +332,7 @@ Objetivo: ${leadForm.goal || "-"}`;
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-sm text-white/80 backdrop-blur-md">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.9)]" />
-                IA para atender melhor e vender mais
+                Criamos seu site e automatizamos seu atendimento
               </div>
 
               <div className="relative">
@@ -333,9 +341,9 @@ Objetivo: ${leadForm.goal || "-"}`;
                 <div className="absolute left-40 top-40 h-[300px] w-[300px] bg-blue-500/10 blur-[120px]" />
 
                 <h1 className="relative max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-7xl">
-                  Sua empresa
+                  Criamos seu
                   <br />
-                  atendendo 24h
+                  site profissional
                   <br />
                   com{" "}
                   <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
@@ -347,35 +355,41 @@ Objetivo: ${leadForm.goal || "-"}`;
               </div>
 
               <p className="mt-8 max-w-2xl text-base leading-8 text-white/60 md:text-lg">
-                Automatize seu atendimento, responda mais rápido, qualifique
-                leads e transforme conversas em oportunidades reais de venda.
+                Desenhamos o seu site do zero, conectamos atendimento
+                inteligente e automatizamos o contato com clientes para sua
+                empresa parecer mais profissional e vender mais.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <button
                   onClick={() =>
                     openWhatsApp(
-                      "Olá! Quero automatizar meu atendimento com a Zayntor e entender a melhor opção para meu negócio."
+                      "Olá! Quero um site profissional com IA para o meu negócio."
                     )
                   }
                   className="rounded-2xl bg-gradient-to-r from-cyan-400 to-purple-500 px-8 py-4 text-sm font-semibold text-black shadow-[0_20px_60px_rgba(34,211,238,0.35)] transition duration-300 hover:scale-[1.04] hover:shadow-[0_30px_80px_rgba(34,211,238,0.5)]"
                 >
-                  Quero automatizar meu atendimento
+                  Quero meu site com IA
                 </button>
 
-                <button
-                  onClick={() =>
-                    openWhatsApp(
-                      "Olá! Quero ver uma demonstração prática de como a Zayntor funciona."
-                    )
-                  }
-                  className="rounded-2xl border border-white/12 bg-white/[0.03] px-7 py-4 text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08]"
+                <a
+                  href="#solucoes"
+                  className="rounded-2xl border border-white/12 bg-white/[0.03] px-7 py-4 text-center text-sm font-medium text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08]"
                 >
-                  Ver demonstração
-                </button>
+                  Ver soluções
+                </a>
               </div>
 
               <div className="mt-12 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
+                <div className="rounded-[28px] border border-white/10 bg-white/[0.045] p-5 shadow-[0_20px_80px_rgba(0,0,0,0.38)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_0_60px_rgba(34,211,238,0.2)]">
+                  <p className="text-3xl font-semibold tracking-[-0.03em]">
+                    Site + IA
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-white/60">
+                    Estrutura completa para sua presença digital.
+                  </p>
+                </div>
+
                 <div className="rounded-[28px] border border-white/10 bg-white/[0.045] p-5 shadow-[0_20px_80px_rgba(0,0,0,0.38)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_0_60px_rgba(34,211,238,0.2)]">
                   <p className="text-3xl font-semibold tracking-[-0.03em]">
                     24/7
@@ -390,16 +404,7 @@ Objetivo: ${leadForm.goal || "-"}`;
                     + Leads
                   </p>
                   <p className="mt-3 text-sm leading-6 text-white/60">
-                    Qualificação inteligente em tempo real.
-                  </p>
-                </div>
-
-                <div className="rounded-[28px] border border-white/10 bg-white/[0.045] p-5 shadow-[0_20px_80px_rgba(0,0,0,0.38)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_0_60px_rgba(34,211,238,0.2)]">
-                  <p className="text-3xl font-semibold tracking-[-0.03em]">
-                    1 Plataforma
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-white/60">
-                    Tudo centralizado para operar melhor.
+                    Mais oportunidades vindas do seu site.
                   </p>
                 </div>
               </div>
@@ -429,37 +434,34 @@ Objetivo: ${leadForm.goal || "-"}`;
                   <div className="space-y-4">
                     <div className="flex justify-start">
                       <div className="max-w-[78%] rounded-2xl rounded-bl-md bg-white/10 px-4 py-3 text-sm leading-6 text-white/90">
-                        Oi, vocês atendem hoje?
+                        Oi, vocês criam site também?
                       </div>
                     </div>
 
                     <div className="flex justify-end">
                       <div className="max-w-[82%] rounded-2xl rounded-br-md bg-cyan-400 px-4 py-3 text-sm leading-6 text-black shadow-[0_10px_25px_rgba(34,211,238,0.22)]">
-                        Sim. Posso te ajudar com agendamento, valores e
-                        informações do serviço. Você prefere atendimento hoje ou
-                        amanhã?
+                        Sim. Criamos seu site profissional e podemos integrar
+                        atendimento inteligente para responder seus clientes.
                       </div>
                     </div>
 
                     <div className="flex justify-start">
                       <div className="max-w-[72%] rounded-2xl rounded-bl-md bg-white/10 px-4 py-3 text-sm leading-6 text-white/90">
-                        Quero saber valores.
+                        Quero site e automação.
                       </div>
                     </div>
 
                     <div className="flex justify-end">
                       <div className="max-w-[82%] rounded-2xl rounded-br-md bg-cyan-400 px-4 py-3 text-sm leading-6 text-black shadow-[0_10px_25px_rgba(34,211,238,0.22)]">
-                        Perfeito. O valor depende do que você precisa. Posso te
-                        fazer 2 perguntas rápidas para te passar a melhor
-                        orientação?
+                        Perfeito. Posso te fazer 2 perguntas rápidas para te
+                        indicar a melhor estrutura para seu negócio?
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-4 rounded-2xl border border-white/10 bg-black/25 px-4 py-3 text-sm leading-6 text-white/45">
-                  Atendimento automatizado com IA, pronto para WhatsApp, site e
-                  operação comercial.
+                  Site, WhatsApp e operação comercial em uma única estrutura.
                 </div>
               </div>
             </div>
@@ -515,7 +517,7 @@ Objetivo: ${leadForm.goal || "-"}`;
 
         <Reveal>
           <h2 className="mb-14 text-center text-3xl font-bold md:text-4xl">
-            Como a Zayntor transforma seu atendimento?
+            Como a Zayntor cria seu site e automatiza seu atendimento?
           </h2>
         </Reveal>
 
@@ -540,14 +542,14 @@ Objetivo: ${leadForm.goal || "-"}`;
 
       <div className="mx-auto h-px max-w-6xl bg-white/5" />
 
-      <section className="mx-auto max-w-5xl px-6 py-18 text-center md:py-20">
+      <section className="mx-auto max-w-5xl px-6 py-20 text-center md:py-20">
         <p className="mb-3 text-center text-sm uppercase tracking-[0.24em] text-violet-300/70">
           Vantagens
         </p>
 
         <Reveal>
           <h2 className="mb-12 text-3xl font-bold md:text-4xl">
-            Mais velocidade, mais controle, mais conversão
+            Site profissional, atendimento inteligente e mais conversão
           </h2>
         </Reveal>
 
@@ -569,7 +571,7 @@ Objetivo: ${leadForm.goal || "-"}`;
 
       <section
         id="nichos"
-    className="mx-auto max-w-7xl px-6 py-24 md:px-10"
+        className="mx-auto max-w-7xl px-6 py-24 md:px-10"
       >
         <Reveal>
           <h2 className="mb-8 text-4xl font-semibold">Para quem é</h2>
@@ -591,8 +593,8 @@ Objetivo: ${leadForm.goal || "-"}`;
         <Reveal delay={0.1}>
           <p className="mt-6 max-w-xl text-white/60">
             Esses são apenas alguns exemplos. A Zayntor se adapta a qualquer
-            tipo de empresa que queira automatizar atendimento e aumentar
-            vendas.
+            tipo de empresa que queira ter um site profissional e automatizar
+            atendimento para aumentar vendas.
           </p>
         </Reveal>
 
@@ -609,14 +611,14 @@ Objetivo: ${leadForm.goal || "-"}`;
       <section id="planos" className="mx-auto max-w-7xl px-6 py-24 md:px-10">
         <Reveal>
           <h2 className="mb-3 text-4xl font-semibold tracking-[-0.04em]">
-            Planos para empresas que querem crescer com IA
+            Planos para empresas que querem site profissional + IA
           </h2>
         </Reveal>
 
         <Reveal delay={0.05}>
           <p className="mb-10 max-w-2xl text-white/60">
-            Escolha a estrutura ideal para automatizar atendimento, qualificar
-            leads e escalar sua operação com mais eficiência.
+            Escolha a estrutura ideal para criar seu site, automatizar
+            atendimento, qualificar leads e escalar sua operação.
           </p>
         </Reveal>
 
@@ -669,12 +671,12 @@ Objetivo: ${leadForm.goal || "-"}`;
                 </p>
 
                 <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">
-                  Solicite uma demonstração da Zayntor
+                  Solicite seu site com IA
                 </h2>
 
                 <p className="mt-5 max-w-md leading-8 text-white/60">
-                  Preencha rapidamente suas informações e fale com a gente no
-                  WhatsApp com uma mensagem pronta e organizada.
+                  Preencha suas informações e descubra como a Zayntor pode criar
+                  seu site profissional e automatizar seu atendimento.
                 </p>
 
                 <div className="mt-8 space-y-4">
@@ -682,7 +684,7 @@ Objetivo: ${leadForm.goal || "-"}`;
                     Resposta mais rápida e direcionada
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-4 text-sm text-white/70">
-                    Ideal para atendimento, vendas e automação
+                    Site profissional + atendimento inteligente
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-4 text-sm text-white/70">
                     Estrutura pensada para negócios reais
@@ -768,7 +770,7 @@ Objetivo: ${leadForm.goal || "-"}`;
                     value={leadForm.goal}
                     onChange={handleLeadInputChange}
                     rows={5}
-                    placeholder="Ex: Quero automatizar atendimento e captar mais leads."
+                    placeholder="Ex: Quero um site profissional com atendimento automatizado."
                     className="w-full resize-none rounded-2xl border border-white/10 bg-[#0B1528] px-4 py-4 text-white outline-none transition placeholder:text-white/30 focus:border-cyan-400/50"
                     required
                   />
@@ -809,8 +811,7 @@ Objetivo: ${leadForm.goal || "-"}`;
 
         <Reveal>
           <h2 className="mx-auto mb-12 max-w-4xl text-center text-3xl font-bold md:text-4xl">
-            Estrutura pensada para negócios que querem atender melhor e vender
-            com mais consistência
+            Site profissional, atendimento inteligente e operação mais organizada
           </h2>
         </Reveal>
 
@@ -838,60 +839,60 @@ Objetivo: ${leadForm.goal || "-"}`;
       <div className="mx-auto h-px max-w-6xl bg-white/5" />
 
       <section className="mx-auto max-w-4xl px-6 py-24">
-  <p className="mb-3 text-center text-sm uppercase tracking-[0.24em] text-cyan-300/70">
-    FAQ
-  </p>
+        <p className="mb-3 text-center text-sm uppercase tracking-[0.24em] text-cyan-300/70">
+          FAQ
+        </p>
 
-  <Reveal>
-    <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
-      Perguntas frequentes
-    </h2>
-  </Reveal>
-
-  <div className="space-y-4">
-    {faqs.map((faq, i) => {
-      const isOpen = openFaq === i;
-
-      return (
-        <Reveal key={i} delay={i * 0.08}>
-          <div className="overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.045] shadow-[0_20px_80px_rgba(0,0,0,0.30)] backdrop-blur-md transition duration-300 hover:border-white/20">
-            <button
-              type="button"
-              onClick={() => setOpenFaq(isOpen ? null : i)}
-              className="flex w-full items-center justify-between px-6 py-5 text-left"
-            >
-              <span className="text-lg font-semibold text-white">
-                {faq.question}
-              </span>
-
-              <span
-                className={`ml-4 text-2xl leading-none text-cyan-300 transition-transform duration-300 ${
-                  isOpen ? "rotate-45" : "rotate-0"
-                }`}
-              >
-                +
-              </span>
-            </button>
-
-            <div
-              className={`grid transition-all duration-300 ${
-                isOpen
-                  ? "grid-rows-[1fr] opacity-100"
-                  : "grid-rows-[0fr] opacity-0"
-              }`}
-            >
-              <div className="overflow-hidden">
-                <div className="px-6 pb-6 pt-0 text-sm leading-7 text-white/60">
-                  {faq.answer}
-                </div>
-              </div>
-            </div>
-          </div>
+        <Reveal>
+          <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
+            Perguntas frequentes
+          </h2>
         </Reveal>
-      );
-    })}
-  </div>
-</section>
+
+        <div className="space-y-4">
+          {faqs.map((faq, i) => {
+            const isOpen = openFaq === i;
+
+            return (
+              <Reveal key={i} delay={i * 0.08}>
+                <div className="overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.045] shadow-[0_20px_80px_rgba(0,0,0,0.30)] backdrop-blur-md transition duration-300 hover:border-white/20">
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between px-6 py-5 text-left"
+                  >
+                    <span className="text-lg font-semibold text-white">
+                      {faq.question}
+                    </span>
+
+                    <span
+                      className={`ml-4 text-2xl leading-none text-cyan-300 transition-transform duration-300 ${
+                        isOpen ? "rotate-45" : "rotate-0"
+                      }`}
+                    >
+                      +
+                    </span>
+                  </button>
+
+                  <div
+                    className={`grid transition-all duration-300 ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-6 pb-6 pt-0 text-sm leading-7 text-white/60">
+                        {faq.answer}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </section>
 
       <div className="mx-auto h-px max-w-6xl bg-white/5" />
 
@@ -902,24 +903,24 @@ Objetivo: ${leadForm.goal || "-"}`;
 
             <div className="relative z-10">
               <h2 className="mx-auto mb-4 max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-white">
-                Pronto para transformar atendimento em vendas?
+                Pronto para ter um site profissional com IA?
               </h2>
 
               <p className="mx-auto mb-8 max-w-2xl leading-8 text-white/60">
-                Fale com a Zayntor e descubra a melhor estrutura para
-                automatizar seu atendimento e acelerar o crescimento do seu
-                negócio.
+                Fale com a Zayntor e descubra a melhor estrutura para criar seu
+                site, automatizar seu atendimento e acelerar o crescimento do
+                seu negócio.
               </p>
 
               <button
                 onClick={() =>
                   openWhatsApp(
-                    "Olá! Quero começar agora com a Zayntor e entender a melhor opção para meu negócio."
+                    "Olá! Quero começar agora com a Zayntor e ter um site profissional com IA."
                   )
                 }
                 className="rounded-2xl bg-gradient-to-r from-cyan-400 to-purple-500 px-10 py-4 font-medium text-black shadow-[0_12px_30px_rgba(34,211,238,0.22)] transition duration-300 hover:scale-[1.02] hover:opacity-95"
               >
-                Falar com a Zayntor agora
+                Quero meu site com IA
               </button>
             </div>
           </div>

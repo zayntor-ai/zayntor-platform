@@ -14,8 +14,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zayntor AI",
-  description: "Automação de atendimento com inteligência artificial",
+  title: "Zayntor AI | Sites profissionais com inteligência artificial",
+  description:
+    "A Zayntor cria sites profissionais e integra inteligência artificial para automatizar atendimento, captar leads e ajudar empresas a vender mais.",
+  keywords: [
+    "site profissional",
+    "criação de sites",
+    "inteligência artificial",
+    "automação de atendimento",
+    "site com IA",
+    "WhatsApp com IA",
+    "landing page",
+    "captação de leads",
+    "Zayntor AI",
+  ],
+  authors: [{ name: "Zayntor AI" }],
+  creator: "Zayntor AI",
+  publisher: "Zayntor AI",
+  metadataBase: new URL("https://zayntor.com"),
+  openGraph: {
+    title: "Zayntor AI | Sites profissionais com inteligência artificial",
+    description:
+      "Criamos seu site profissional e integramos IA para automatizar atendimento, organizar leads e acelerar vendas.",
+    url: "https://zayntor.com",
+    siteName: "Zayntor AI",
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zayntor AI | Sites profissionais com inteligência artificial",
+    description:
+      "Criamos sites profissionais e automatizamos atendimento com IA para empresas venderem mais.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -29,6 +64,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <meta name="theme-color" content="#071120" />
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DN64Y329DX"
@@ -45,9 +82,7 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body className="min-h-full flex flex-col">
-        {children}
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
