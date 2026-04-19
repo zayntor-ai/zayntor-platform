@@ -153,57 +153,57 @@ Objetivo: ${leadForm.goal || "-"}`;
       name: "Starter",
       price: "R$ 97,00",
       description:
-        "Ideal para começar com site profissional e automação básica de atendimento.",
+        "✔ Site profissional completo ✔ Design moderno ✔ Integração com WhatsApp ✔ Estrutura pronta para conversão",
       featured: false,
       whatsappMessage:
-        "Olá! Tenho interesse no plano Starter da Zayntor. Quero entender como ele pode me ajudar a criar meu site e automatizar meu atendimento.",
+        "Olá! Quero começar com o plano Starter e ter meu site profissional.",
     },
     {
       name: "Pro",
       price: "R$ 197,00",
       description:
-        "Mais automação, mais controle e uma estrutura mais forte para site, atendimento e vendas.",
+        "✔ Tudo do Starter ✔ IA de atendimento ✔ Automação no WhatsApp ✔ Captação de leads ✔ Estrutura para vendas",
       featured: true,
       whatsappMessage:
-        "Olá! Tenho interesse no plano Pro da Zayntor. Quero entender como ele pode unir site profissional e automação para vender mais.",
+        "Olá! Quero o plano Pro com site + IA + automação.",
     },
     {
       name: "Business",
       price: "R$ 397,00",
       description:
-        "Estrutura completa para empresas que querem site profissional, atendimento inteligente e escala.",
+        "✔ Tudo do Pro ✔ IA avançada ✔ Automações completas ✔ Estratégia de conversão ✔ Suporte prioritário",
       featured: false,
       whatsappMessage:
-        "Olá! Tenho interesse no plano Business da Zayntor. Quero entender a melhor estrutura para site, atendimento e crescimento do meu negócio.",
+        "Olá! Quero o plano Business completo.",
     },
   ];
 
   const steps = [
     {
       number: "01",
-      title: "Criamos seu site profissional",
+      title: "Você nos chama",
       description:
-        "Desenhamos um site moderno, rápido e com cara de empresa séria para apresentar seu negócio e converter visitantes.",
+        "Explique seu negócio, seu objetivo e o que você quer melhorar no seu atendimento e na sua presença online.",
     },
     {
       number: "02",
-      title: "Integramos sua IA de atendimento",
+      title: "Criamos seu site",
       description:
-        "Conectamos um assistente inteligente ao site e ao WhatsApp para responder clientes em tempo real.",
+        "Desenvolvemos um site profissional, moderno e focado em conversão para apresentar sua empresa do jeito certo.",
     },
     {
       number: "03",
-      title: "Automatizamos a conversão",
+      title: "Ativamos a inteligência artificial",
       description:
-        "A estrutura capta, organiza e encaminha leads para o próximo passo comercial com mais eficiência.",
+        "Automatizamos seu atendimento, integramos com WhatsApp e organizamos seus leads para vender mais.",
     },
   ];
 
   const benefits = [
-    "Site profissional com presença digital forte",
-    "Atendimento automatizado no site e no WhatsApp",
-    "Mais organização comercial para sua operação",
-    "Mais oportunidades convertidas em clientes",
+    "Mais clientes entrando todos os dias",
+    "Atendimento automático 24h",
+    "Mais profissionalismo na sua marca",
+    "Mais vendas sem depender só de você",
   ];
 
   const faqs = [
@@ -215,7 +215,7 @@ Objetivo: ${leadForm.goal || "-"}`;
     {
       question: "Vocês criam o site também?",
       answer:
-        "Sim. A Zayntor cria seu site profissional do zero e integra atendimento inteligente para sua empresa operar melhor.",
+        "Sim. Criamos seu site profissional completo e integramos inteligência artificial para automatizar seu atendimento e gerar mais clientes.",
     },
     {
       question: "Preciso já ter um site pronto?",
@@ -341,23 +341,27 @@ Objetivo: ${leadForm.goal || "-"}`;
                 <div className="absolute left-40 top-40 h-[300px] w-[300px] bg-blue-500/10 blur-[120px]" />
 
                 <h1 className="relative max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-7xl">
-                  Criamos seu
+                  Criamos seu site profissional
                   <br />
-                  site profissional
+                  e automatizamos seu atendimento
                   <br />
                   com{" "}
                   <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
-                    inteligência
-                    <br />
-                    artificial
+                    inteligência artificial
                   </span>
                 </h1>
               </div>
 
               <p className="mt-8 max-w-2xl text-base leading-8 text-white/60 md:text-lg">
-                Desenhamos o seu site do zero, conectamos atendimento
-                inteligente e automatizamos o contato com clientes para sua
-                empresa parecer mais profissional e vender mais.
+                Você não precisa se preocupar com tecnologia. A Zayntor cuida
+                de tudo: site, inteligência artificial e integração com
+                WhatsApp para sua empresa vender todos os dias.
+              </p>
+
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-white/50 md:text-base">
+                Ideal para empresas que querem presença online profissional,
+                captar mais clientes e automatizar o atendimento sem
+                complicação.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -517,7 +521,7 @@ Objetivo: ${leadForm.goal || "-"}`;
 
         <Reveal>
           <h2 className="mb-14 text-center text-3xl font-bold md:text-4xl">
-            Como a Zayntor cria seu site e automatiza seu atendimento?
+            Como funciona
           </h2>
         </Reveal>
 
@@ -549,7 +553,7 @@ Objetivo: ${leadForm.goal || "-"}`;
 
         <Reveal>
           <h2 className="mb-12 text-3xl font-bold md:text-4xl">
-            Site profissional, atendimento inteligente e mais conversão
+            O que você ganha com a Zayntor
           </h2>
         </Reveal>
 
@@ -611,14 +615,14 @@ Objetivo: ${leadForm.goal || "-"}`;
       <section id="planos" className="mx-auto max-w-7xl px-6 py-24 md:px-10">
         <Reveal>
           <h2 className="mb-3 text-4xl font-semibold tracking-[-0.04em]">
-            Planos para empresas que querem site profissional + IA
+            Planos para empresas que querem vender mais
           </h2>
         </Reveal>
 
         <Reveal delay={0.05}>
           <p className="mb-10 max-w-2xl text-white/60">
             Escolha a estrutura ideal para criar seu site, automatizar
-            atendimento, qualificar leads e escalar sua operação.
+            atendimento e transformar visitantes em clientes.
           </p>
         </Reveal>
 
@@ -671,12 +675,12 @@ Objetivo: ${leadForm.goal || "-"}`;
                 </p>
 
                 <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">
-                  Solicite seu site com IA
+                  Quero meu site com inteligência artificial
                 </h2>
 
                 <p className="mt-5 max-w-md leading-8 text-white/60">
-                  Preencha suas informações e descubra como a Zayntor pode criar
-                  seu site profissional e automatizar seu atendimento.
+                  Preencha abaixo e nossa equipe entra em contato para iniciar
+                  seu projeto.
                 </p>
 
                 <div className="mt-8 space-y-4">
@@ -781,7 +785,7 @@ Objetivo: ${leadForm.goal || "-"}`;
                   disabled={isSubmitting}
                   className="w-full rounded-2xl bg-gradient-to-r from-cyan-400 to-purple-500 px-6 py-4 font-medium text-black shadow-[0_12px_30px_rgba(34,211,238,0.22)] transition duration-300 hover:scale-[1.02] hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {isSubmitting ? "Enviando..." : "Solicitar demonstração"}
+                  {isSubmitting ? "Enviando..." : "Quero começar agora"}
                 </button>
 
                 {formMessage && (
@@ -903,13 +907,12 @@ Objetivo: ${leadForm.goal || "-"}`;
 
             <div className="relative z-10">
               <h2 className="mx-auto mb-4 max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-white">
-                Pronto para ter um site profissional com IA?
+                Criamos seu site e automatizamos seu atendimento com IA
               </h2>
 
               <p className="mx-auto mb-8 max-w-2xl leading-8 text-white/60">
-                Fale com a Zayntor e descubra a melhor estrutura para criar seu
-                site, automatizar seu atendimento e acelerar o crescimento do
-                seu negócio.
+                Tenha presença profissional, mais clientes entrando e
+                atendimento funcionando todos os dias.
               </p>
 
               <button
