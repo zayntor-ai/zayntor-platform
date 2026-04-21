@@ -316,7 +316,7 @@ Objetivo: ${leadForm.goal || "-"}`;
           <button
             onClick={() =>
               openWhatsApp(
-                "Olá! Quero entender como a Zayntor pode criar meu site profissional e automatizar meu atendimento."
+                "Olá! Quero entender como a Zayntor pode criar meu site profissional e automatizar meu atendimento no WhatsApp."
               )
             }
             className="rounded-xl bg-gradient-to-r from-cyan-400 to-purple-500 px-5 py-2 text-sm font-medium text-black shadow-[0_12px_30px_rgba(34,211,238,0.22)] transition duration-300 hover:scale-[1.02] hover:opacity-95"
@@ -341,21 +341,22 @@ Objetivo: ${leadForm.goal || "-"}`;
                 <div className="absolute left-40 top-40 h-[300px] w-[300px] bg-blue-500/10 blur-[120px]" />
 
                 <h1 className="relative max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-7xl">
-                  Criamos seu site profissional
+                  Criamos seu site do zero
                   <br />
                   e automatizamos seu atendimento
                   <br />
-                  com{" "}
+                  no WhatsApp com um{" "}
                   <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
-                    inteligência artificial
-                  </span>
+                    funcionário virtual
+                  </span>{" "}
+                  que atende seus clientes 24h
                 </h1>
               </div>
 
               <p className="mt-8 max-w-2xl text-base leading-8 text-white/60 md:text-lg">
-                Você não precisa se preocupar com tecnologia. A Zayntor cuida
-                de tudo: site, inteligência artificial e integração com
-                WhatsApp para sua empresa vender todos os dias.
+                Criamos seu site profissional e automatizamos seu atendimento
+                no WhatsApp para responder clientes, iniciar conversas e ajudar
+                sua empresa a vender todos os dias.
               </p>
 
               <p className="mt-4 max-w-2xl text-sm leading-7 text-white/50 md:text-base">
@@ -368,7 +369,7 @@ Objetivo: ${leadForm.goal || "-"}`;
                 <button
                   onClick={() =>
                     openWhatsApp(
-                      "Olá! Quero um site profissional com IA para o meu negócio."
+                      "Olá! Quero um site profissional e automatizar meu atendimento no WhatsApp com IA."
                     )
                   }
                   className="rounded-2xl bg-gradient-to-r from-cyan-400 to-purple-500 px-8 py-4 text-sm font-semibold text-black shadow-[0_20px_60px_rgba(34,211,238,0.35)] transition duration-300 hover:scale-[1.04] hover:shadow-[0_30px_80px_rgba(34,211,238,0.5)]"
@@ -907,7 +908,8 @@ Objetivo: ${leadForm.goal || "-"}`;
 
             <div className="relative z-10">
               <h2 className="mx-auto mb-4 max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-white">
-                Criamos seu site e automatizamos seu atendimento com IA
+                Criamos seu site do zero e automatizamos seu atendimento no
+                WhatsApp com um funcionário virtual que atende seus clientes 24h
               </h2>
 
               <p className="mx-auto mb-8 max-w-2xl leading-8 text-white/60">
@@ -918,7 +920,7 @@ Objetivo: ${leadForm.goal || "-"}`;
               <button
                 onClick={() =>
                   openWhatsApp(
-                    "Olá! Quero começar agora com a Zayntor e ter um site profissional com IA."
+                    "Olá! Quero começar agora com a Zayntor e ter um site profissional com atendimento automatizado no WhatsApp."
                   )
                 }
                 className="rounded-2xl bg-gradient-to-r from-cyan-400 to-purple-500 px-10 py-4 font-medium text-black shadow-[0_12px_30px_rgba(34,211,238,0.22)] transition duration-300 hover:scale-[1.02] hover:opacity-95"
