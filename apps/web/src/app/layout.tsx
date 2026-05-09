@@ -1,20 +1,9 @@
 import Script from "next/script";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Zayntor AI | Sites profissionais com inteligência artificial",
+  title: "Zayntor | Sites profissionais com inteligência artificial",
   description:
     "A Zayntor cria sites profissionais e integra inteligência artificial para automatizar atendimento, captar leads e ajudar empresas a vender mais.",
   keywords: [
@@ -26,24 +15,24 @@ export const metadata: Metadata = {
     "WhatsApp com IA",
     "landing page",
     "captação de leads",
-    "Zayntor AI",
+    "Zayntor",
   ],
-  authors: [{ name: "Zayntor AI" }],
-  creator: "Zayntor AI",
-  publisher: "Zayntor AI",
+  authors: [{ name: "Zayntor" }],
+  creator: "Zayntor",
+  publisher: "Zayntor",
   metadataBase: new URL("https://zayntor.com"),
   openGraph: {
-    title: "Zayntor AI | Sites profissionais com inteligência artificial",
+    title: "Zayntor | Sites profissionais com inteligência artificial",
     description:
       "Criamos seu site profissional e integramos IA para automatizar atendimento, organizar leads e acelerar vendas.",
     url: "https://zayntor.com",
-    siteName: "Zayntor AI",
+    siteName: "Zayntor",
     locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zayntor AI | Sites profissionais com inteligência artificial",
+    title: "Zayntor | Sites profissionais com inteligência artificial",
     description:
       "Criamos sites profissionais e automatizamos atendimento com IA para empresas venderem mais.",
   },
@@ -59,19 +48,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="pt-BR" className="h-full antialiased">
       <head>
-        <meta name="theme-color" content="#071120" />
+        <meta name="theme-color" content="#F7F3EE" />
 
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DN64Y329DX"
           strategy="afterInteractive"
         />
-
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
