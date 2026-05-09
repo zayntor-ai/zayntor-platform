@@ -1177,7 +1177,7 @@ export default function Home() {
           fontFamily: "'DM Sans', sans-serif",
           fontSize: 12, color: C.sand,
         }}>
-          © {new Date().getFullYear()} Zayntor · Sites profissionais com inteligência artificial
+          © {new Date().getFullYear()} Zayntor · Tecnologia para empresas que querem crescer
         </p>
       </footer>
 
