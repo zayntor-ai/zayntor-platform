@@ -20,7 +20,7 @@ export default function Home() {
   const [formMessage, setFormMessage] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const whatsappNumber = "5511999999999";
+  const whatsappNumber = "553197511487";
   const appsScriptUrl =
     "https://script.google.com/macros/s/AKfycbwuwbtCIHtyrMjMkGxh9lwssRcCfvrk3wiEO08GfjZuBAtOXrVg-5emXUBHTM1JaHKtgQ/exec";
 
@@ -87,11 +87,9 @@ export default function Home() {
       return;
     }
 
-    if (!leadForm.goal.trim() || leadForm.goal.trim().length < 10) {
+    if (!leadForm.goal.trim()) {
       setFormStatus("error");
-      setFormMessage(
-        "Descreva melhor seu objetivo em pelo menos 10 caracteres."
-      );
+      setFormMessage("Selecione seu objetivo principal.");
       setIsSubmitting(false);
       return;
     }
@@ -150,31 +148,44 @@ Objetivo: ${leadForm.goal || "-"}`;
 
   const plans = [
     {
-      name: "Starter",
-      price: "R$ 97,00",
+      name: "Site",
+      price: "R$ 397",
+      period: "/mês",
       description:
-        "✔ Site profissional completo ✔ Design moderno ✔ Integração com WhatsApp ✔ Estrutura pronta para conversão",
+        "✔ Site profissional completo ✔ Design moderno e responsivo ✔ Integração com WhatsApp ✔ Manutenção inclusa ✔ Suporte contínuo",
       featured: false,
       whatsappMessage:
-        "Olá! Quero começar com o plano Starter e ter meu site profissional.",
+        "Olá! Tenho interesse no plano Site da Zayntor (R$397/mês). Quero um site profissional com manutenção e suporte.",
+    },
+    {
+      name: "IA",
+      price: "R$ 397",
+      period: "/mês",
+      description:
+        "✔ Agente de IA de atendimento ✔ Respostas automáticas inteligentes ✔ Integração com WhatsApp ✔ Atendimento 24h ✔ Captação de leads",
+      featured: false,
+      whatsappMessage:
+        "Olá! Tenho interesse no plano IA da Zayntor (R$397/mês). Quero um agente de inteligência artificial para automatizar meu atendimento.",
     },
     {
       name: "Pro",
-      price: "R$ 197,00",
+      price: "R$ 597",
+      period: "/mês",
       description:
-        "✔ Tudo do Starter ✔ IA de atendimento ✔ Automação no WhatsApp ✔ Captação de leads ✔ Estrutura para vendas",
+        "✔ Site profissional completo ✔ Agente de IA de atendimento ✔ Automação no WhatsApp ✔ Captação de leads ✔ Estrutura para vendas",
       featured: true,
       whatsappMessage:
-        "Olá! Quero o plano Pro com site + IA + automação.",
+        "Olá! Tenho interesse no plano Pro da Zayntor (R$597/mês). Quero site + IA + automação no WhatsApp.",
     },
     {
       name: "Business",
-      price: "R$ 397,00",
+      price: "R$ 997",
+      period: "/mês",
       description:
-        "✔ Tudo do Pro ✔ IA avançada ✔ Automações completas ✔ Estratégia de conversão ✔ Suporte prioritário",
+        "✔ Tudo do Pro ✔ IA avançada personalizada ✔ Automações completas ✔ Estratégia de conversão ✔ Suporte prioritário",
       featured: false,
       whatsappMessage:
-        "Olá! Quero o plano Business completo.",
+        "Olá! Tenho interesse no plano Business da Zayntor (R$997/mês). Quero a estrutura completa com IA avançada e suporte prioritário.",
     },
   ];
 
@@ -227,6 +238,11 @@ Objetivo: ${leadForm.goal || "-"}`;
       answer:
         "Sim. A estrutura é preparada para operar com atendimento inteligente em canais como WhatsApp.",
     },
+    {
+      question: "Já tenho um site, posso contratar só a IA?",
+      answer:
+        "Sim! Temos o plano IA exclusivo para quem já possui site e quer adicionar um agente de atendimento inteligente no WhatsApp.",
+    },
   ];
 
   const trustItems = [
@@ -262,6 +278,26 @@ Objetivo: ${leadForm.goal || "-"}`;
       onMouseMove={(e) => setMouse({ x: e.clientX, y: e.clientY })}
       className="relative overflow-hidden bg-[#071120] text-white"
     >
+      {/* BOTÃO FLUTUANTE WHATSAPP */}
+      <button
+        onClick={() =>
+          openWhatsApp(
+            "Olá! Vim pelo site da Zayntor e quero saber mais sobre os serviços."
+          )
+        }
+        aria-label="Falar no WhatsApp"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-[0_8px_32px_rgba(37,211,102,0.45)] transition duration-300 hover:scale-110 hover:shadow-[0_12px_40px_rgba(37,211,102,0.6)]"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 32 32"
+          fill="white"
+          className="h-7 w-7"
+        >
+          <path d="M16 0C7.164 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.773L0 32l8.437-2.01A15.93 15.93 0 0 0 16 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.771-1.854l-.485-.287-5.01 1.194 1.258-4.874-.316-.5A13.243 13.243 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.77c-.398-.199-2.354-1.162-2.719-1.294-.365-.133-.631-.199-.897.199-.265.398-1.029 1.294-1.261 1.56-.232.266-.464.299-.863.1-.398-.2-1.683-.62-3.204-1.977-1.184-1.057-1.983-2.362-2.215-2.76-.232-.398-.025-.613.174-.811.179-.178.398-.464.597-.696.2-.232.266-.398.398-.664.133-.265.067-.498-.033-.697-.1-.198-.897-2.163-1.229-2.96-.324-.778-.652-.673-.897-.686l-.764-.013c-.265 0-.696.1-1.061.498-.365.398-1.394 1.362-1.394 3.322s1.427 3.853 1.626 4.119c.199.265 2.808 4.287 6.804 6.014.951.41 1.693.655 2.271.839.954.304 1.823.261 2.51.158.765-.114 2.354-.962 2.687-1.892.332-.93.332-1.727.232-1.893-.099-.165-.365-.265-.763-.464z" />
+        </svg>
+      </button>
+
       <div
         className="pointer-events-none fixed inset-0 z-0 transition duration-300"
         style={{
@@ -574,10 +610,7 @@ Objetivo: ${leadForm.goal || "-"}`;
 
       <div className="mx-auto h-px max-w-6xl bg-white/5" />
 
-      <section
-        id="nichos"
-        className="mx-auto max-w-7xl px-6 py-24 md:px-10"
-      >
+      <section id="nichos" className="mx-auto max-w-7xl px-6 py-24 md:px-10">
         <Reveal>
           <h2 className="mb-8 text-4xl font-semibold">Para quem é</h2>
         </Reveal>
@@ -613,6 +646,7 @@ Objetivo: ${leadForm.goal || "-"}`;
 
       <div className="mx-auto h-px max-w-6xl bg-white/5" />
 
+      {/* PLANOS — 4 planos */}
       <section id="planos" className="mx-auto max-w-7xl px-6 py-24 md:px-10">
         <Reveal>
           <h2 className="mb-3 text-4xl font-semibold tracking-[-0.04em]">
@@ -627,11 +661,11 @@ Objetivo: ${leadForm.goal || "-"}`;
           </p>
         </Reveal>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan, index) => (
             <Reveal key={plan.name} delay={index * 0.08}>
               <div
-                className={`relative rounded-[28px] border p-6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:scale-[1.015] ${
+                className={`relative flex h-full flex-col rounded-[28px] border p-6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:scale-[1.015] ${
                   plan.featured
                     ? "border-cyan-400/50 bg-gradient-to-b from-cyan-400/12 to-violet-500/8 shadow-[0_0_50px_rgba(34,211,238,0.10)]"
                     : "border-white/10 bg-white/[0.045] hover:border-white/20"
@@ -645,15 +679,24 @@ Objetivo: ${leadForm.goal || "-"}`;
 
                 <p className="text-sm text-white/50">{plan.name}</p>
 
-                <h3 className="mt-4 text-3xl font-semibold">{plan.price}</h3>
+                <h3 className="mt-4 text-3xl font-semibold">
+                  {plan.price}
+                  <span className="text-base font-normal text-white/50">
+                    {plan.period}
+                  </span>
+                </h3>
 
-                <p className="mt-3 text-sm leading-7 text-white/60">
+                <p className="mt-3 flex-1 text-sm leading-7 text-white/60">
                   {plan.description}
                 </p>
 
                 <button
                   onClick={() => openWhatsApp(plan.whatsappMessage)}
-                  className="mt-6 w-full rounded-xl bg-white py-3 text-sm font-medium text-black transition hover:scale-[1.02]"
+                  className={`mt-6 w-full rounded-xl py-3 text-sm font-medium transition hover:scale-[1.02] ${
+                    plan.featured
+                      ? "bg-gradient-to-r from-cyan-400 to-purple-500 text-black shadow-[0_8px_24px_rgba(34,211,238,0.3)]"
+                      : "bg-white text-black"
+                  }`}
                 >
                   Escolher plano
                 </button>
@@ -722,7 +765,7 @@ Objetivo: ${leadForm.goal || "-"}`;
                     name="whatsapp"
                     value={leadForm.whatsapp}
                     onChange={handleLeadInputChange}
-                    placeholder="Ex: (11) 91234-5678"
+                    placeholder="Ex: (31) 91234-5678"
                     className="w-full rounded-2xl border border-white/10 bg-[#0B1528] px-4 py-4 text-white outline-none transition placeholder:text-white/30 focus:border-cyan-400/50"
                     required
                   />
@@ -770,15 +813,41 @@ Objetivo: ${leadForm.goal || "-"}`;
                   <label className="mb-2 block text-sm text-white/70">
                     Objetivo principal
                   </label>
-                  <textarea
+                  <select
                     name="goal"
                     value={leadForm.goal}
                     onChange={handleLeadInputChange}
-                    rows={5}
-                    placeholder="Ex: Quero um site profissional com atendimento automatizado."
-                    className="w-full resize-none rounded-2xl border border-white/10 bg-[#0B1528] px-4 py-4 text-white outline-none transition placeholder:text-white/30 focus:border-cyan-400/50"
+                    className="w-full rounded-2xl border border-white/10 bg-[#0B1528] px-4 py-4 text-white outline-none transition focus:border-cyan-400/50"
                     required
-                  />
+                  >
+                    <option value="" className="bg-[#0B1528]">
+                      Selecione seu objetivo
+                    </option>
+                    <option
+                      value="Quero site + IA de atendimento completo"
+                      className="bg-[#0B1528]"
+                    >
+                      Quero site + IA de atendimento completo
+                    </option>
+                    <option
+                      value="Quero apenas um site profissional"
+                      className="bg-[#0B1528]"
+                    >
+                      Quero apenas um site profissional
+                    </option>
+                    <option
+                      value="Já tenho site, quero apenas a IA de atendimento"
+                      className="bg-[#0B1528]"
+                    >
+                      Já tenho site, quero apenas a IA de atendimento
+                    </option>
+                    <option
+                      value="Ainda não sei, quero entender melhor"
+                      className="bg-[#0B1528]"
+                    >
+                      Ainda não sei, quero entender melhor
+                    </option>
+                  </select>
                 </div>
 
                 <button
@@ -816,7 +885,8 @@ Objetivo: ${leadForm.goal || "-"}`;
 
         <Reveal>
           <h2 className="mx-auto mb-12 max-w-4xl text-center text-3xl font-bold md:text-4xl">
-            Site profissional, atendimento inteligente e operação mais organizada
+            Site profissional, atendimento inteligente e operação mais
+            organizada
           </h2>
         </Reveal>
 
