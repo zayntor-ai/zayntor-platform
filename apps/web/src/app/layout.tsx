@@ -51,6 +51,7 @@ export default function RootLayout({
     <html lang="pt-BR" className="h-full antialiased">
       <head>
         <meta name="theme-color" content="#F7F3EE" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
         {/* Google Analytics */}
         <Script

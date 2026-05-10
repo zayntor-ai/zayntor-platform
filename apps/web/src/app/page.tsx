@@ -261,18 +261,33 @@ export default function Home() {
         }}>
           {/* Logo */}
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{
-              width: 38, height: 38, borderRadius: 10,
-              background: C.ebony,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              flexShrink: 0,
-            }}>
-              <span style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: 18, fontWeight: 800,
-                color: C.cream,
-                letterSpacing: "-0.06em",
-              }}>Z</span>
+            <div style={{ flexShrink: 0 }}>
+              <svg width="38" height="38" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* trilha fantasma */}
+                <path d="M4 14 H18 L34 38 H48" stroke="#1A1208" strokeWidth="1.2" strokeLinecap="round" opacity="0.07" fill="none"/>
+                {/* Z — sinal elétrico */}
+                <path d="M8 13 H40"     stroke="#D4680A" strokeWidth="3.4" strokeLinecap="round" fill="none"/>
+                <path d="M40 13 L12 39" stroke="#D4680A" strokeWidth="3.4" strokeLinecap="round" fill="none"/>
+                <path d="M12 39 H44"    stroke="#D4680A" strokeWidth="3.4" strokeLinecap="round" fill="none"/>
+                {/* terminais de circuito */}
+                <rect x="5"  y="10" width="6" height="6" rx="1.5" fill="#1A1208" opacity="0.85"/>
+                <rect x="41" y="10" width="6" height="6" rx="1.5" fill="#1A1208" opacity="0.35"/>
+                <rect x="9"  y="36" width="6" height="6" rx="1.5" fill="#1A1208" opacity="0.35"/>
+                <rect x="41" y="36" width="6" height="6" rx="1.5" fill="#1A1208" opacity="0.85"/>
+                {/* olho de IA — forma amendoada */}
+                <path d="M17 26 Q26 17 35 26 Q26 35 17 26 Z" fill="none" stroke="#1A1208" strokeWidth="1.5" opacity="0.7"/>
+                {/* cílios — detalhe premium */}
+                <line x1="22" y1="20.5" x2="21" y2="18.5" stroke="#1A1208" strokeWidth="1" strokeLinecap="round" opacity="0.3"/>
+                <line x1="26" y1="19"   x2="26" y2="17"   stroke="#1A1208" strokeWidth="1" strokeLinecap="round" opacity="0.3"/>
+                <line x1="30" y1="20.5" x2="31" y2="18.5" stroke="#1A1208" strokeWidth="1" strokeLinecap="round" opacity="0.3"/>
+                {/* íris com anel digital */}
+                <circle cx="26" cy="26" r="5.5" fill="none" stroke="#D4680A" strokeWidth="1.6"/>
+                <circle cx="26" cy="26" r="3"   fill="none" stroke="#D4680A" strokeWidth="0.9" opacity="0.5"/>
+                {/* pupila */}
+                <circle cx="26" cy="26" r="1.8" fill="#D4680A"/>
+                {/* reflexo */}
+                <circle cx="28" cy="24" r="0.8" fill="#1A1208" opacity="0.4"/>
+              </svg>
             </div>
             <div>
               <p style={{
@@ -1177,7 +1192,7 @@ export default function Home() {
           fontFamily: "'DM Sans', sans-serif",
           fontSize: 12, color: C.sand,
         }}>
-          © {new Date().getFullYear()} Zayntor · Tecnologia para empresas que querem crescer
+          © {new Date().getFullYear()} Zayntor · Sites profissionais com inteligência artificial
         </p>
       </footer>
 
