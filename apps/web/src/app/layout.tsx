@@ -52,6 +52,8 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#F7F3EE" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.svg" />
+        <meta name="msapplication-TileImage" content="/favicon.svg" />
 
         {/* Google Analytics */}
         <Script
